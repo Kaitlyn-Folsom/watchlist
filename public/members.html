@@ -1,35 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <title>Passport Authentication</title>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/lumen/bootstrap.min.css">
-  <link href="stylesheets/style.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description" content="">
+  <title>Watchlist</title>
+
+	<link rel="shortcut icon" href="#" type="image/x-icon">
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="stylesheets/style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
-
 <body>
-  <nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="/logout">
-        Logout
-      </a>
-    </div>
-  </div>
-</nav>
+
   <div class="container">
-    <div class="row">
-      <div class="col-md-6 col-md-offset-3">
-        <h2>Welcome <span class="member-name"></span></h2>
-      </div>
+      <h1><span class="member-name"></span>'s Watchlist</h1>
+
+      
+      <input class="input tv-input" type="text">
+      <button class="btn btn-secondary searchTV" type="submit">Search</button>
+
+    <div class="table-responsive">
+      <table class="table table-bordered">
+        <th colspan="7" class="table-info">Sunday</th>
+          <tr>
+            <td></td>
+            <td>8:00</td>
+            <td>8:30</td>
+            <td>9:00</td>
+            <td>9:30</td>
+            <td>10:00</td>
+            <td>10:30</td>
+          </tr>
+          <tr>
+            <td>CBS</td>
+          </tr>
+          <tr>
+            <td>NBC</td>
+          </tr>
+          <tr>
+            <td>FOX</td>
+          </tr>
+        <th colspan="6">Monday</th>
+          <tr>
+            <td>8:00</td>
+            <td>8:30</td>
+            <td>9:00</td>
+            <td>9:30</td>
+            <td>10:00</td>
+            <td>10:30</td>
+          </tr>
+        <th colspan="6">Tuesday</th>
+          <tr>
+            <td>8:00</td>
+            <td>8:30</td>
+            <td>9:00</td>
+            <td>9:30</td>
+            <td>10:00</td>
+            <td>10:30</td>
+          </tr>
+        <th colspan="6">Wednesday</th>
+          <tr>
+            <td>8:00</td>
+            <td>8:30</td>
+            <td>9:00</td>
+            <td>9:30</td>
+            <td>10:00</td>
+            <td>10:30</td>
+          </tr>
+        <th colspan="6">Thursday</th>
+          <tr>
+            <td>8:00</td>
+            <td>8:30</td>
+            <td>9:00</td>
+            <td>9:30</td>
+            <td>10:00</td>
+            <td>10:30</td>
+          </tr>
+        <th colspan="6">Friday</th>
+          <tr>
+            <td>8:00</td>
+            <td>8:30</td>
+            <td>9:00</td>
+            <td>9:30</td>
+            <td>10:00</td>
+            <td>10:30</td>
+          </tr>
+        <th colspan="6">Monday</th>
+          <tr>
+            <td>8:00</td>
+            <td>8:30</td>
+            <td>9:00</td>
+            <td>9:30</td>
+            <td>10:00</td>
+            <td>10:30</td>
+          </tr>
+      </table>
     </div>
   </div>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script type="text/javascript" src="js/members.js"></script>
 
+  <script src="js/members.js"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+	 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </body>
-
 </html>
