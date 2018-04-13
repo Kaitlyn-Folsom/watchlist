@@ -21,6 +21,19 @@ $(document).ready(function() {
       method: "GET"
     }).done(function(response) {
       console.log(response);
+
+      for (var i = 0; i < response.length; i++) {
+        console.log(response[i].show);
+        $("#results").html("<h2>" + response[0].show.name + "</h2>");
+        $("#results").append("<img src='" + response[0].show.image.medium + "'>");
+        $("#results").append("<p>" + response[0].show.summary + "</p>");
+        $("#results").append("<p>" + response[0].show.network.name + "</p>");
+        $("#results").append("<p>" + response[0].show.genres + "</p>");
+        $("#results").append("<p>" + response[0].show.premiered + "</p>");
+        $("#results").append("<a target='_blank' href='" + response[0].show.officialSite + "'>" + response[0].show.officialSite + "</a>");
+        $("#results").append("<br>");
+        $("#results").append("<button class='btn btn-info'>Add to Watchlist</button>");
+      }
     });
   });
 
