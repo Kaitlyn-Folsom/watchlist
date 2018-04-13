@@ -10,6 +10,7 @@ $(document).ready(function() {
   // This function handles events where a movie button is clicked
   $(".searchTV").on("click", function(event) {
     event.preventDefault();
+    $("#episode-results").empty();
     // This line grabs the input from the textbox
     var show = $(".tv-input").val().trim();
     var queryURL = "http://api.tvmaze.com/search/shows?q=" + show + "&embed=episodes";
@@ -40,7 +41,10 @@ $(document).ready(function() {
           method: "GET"
         }).done(function(data) {
           console.log(data);
-         
+          for (var i = 0; i < data.length; i++) {
+            $("#episode-results").append("<h2>" + data[i].name + "</h2>");
+          }
+          
         });
       }); 
     });
