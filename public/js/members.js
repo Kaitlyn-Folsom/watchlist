@@ -5,8 +5,6 @@ $(document).ready(function() {
     $(".member-name").text(data.email);
   });
 
-
-
   // This function handles events where a movie button is clicked
   $(".searchTV").on("click", function(event) {
     event.preventDefault();
@@ -42,7 +40,7 @@ $(document).ready(function() {
         }).done(function(data) {
           console.log(data);
           for (var i = 0; i < data.length; i++) {
-            $("#episode-results").append("<h2>" + data[i].name + "</h2>");
+            $("#episode-results").append("<h3>" + data[i].name + "</h3>");
           }
           
         });
