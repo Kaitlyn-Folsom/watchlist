@@ -5,41 +5,42 @@
   <title>Watchlist</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/lumen/bootstrap.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
   <link href="stylesheets/style.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Comfortaa:300,400|Nunito:300,400" rel="stylesheet">
 </head>
 
-<body>
-  <div class="container">
-    <div class="row login-container">
-      <div class="col-md-4 col-md-offset-2">
-        <!-- Add television graphics in this col -->
-        <img class="tv-img" src="images/flat-screen.png" alt="Television png">
-        <img class="tv-img" src="images/vintage-tv.jpg" alt="Television png">
-      </div>
-      <div class="col-md-4">
-        <form class="form login">
-            <h1>My Watchlist</h1>
-          <div class="form-group">
-            <input type="email" class="form-control" id="email-input" placeholder="Email">
+<body class="background">
+  <div class="container login-container">
+    <div class="row">
+        <div class="row justify-content-around">
+          <div class="col-3">
+            <!-- Add television graphics in this col -->
+            <img class="tv-img" src="images/flat-screen.png" alt="Television png">
+            <img class="tv-img" src="images/vintage-tv.jpg" alt="Television png">
           </div>
-          <div class="form-group">
-            <input type="password" class="form-control" id="password-input" placeholder="Password">
+          <div class="col-3">
+            <form class="form login">
+                <h1>My Watchlist</h1>
+              <div class="form-group">
+                <input type="email" class="form-control" id="email-input" placeholder="Email">
+              </div>
+              <div class="form-group">
+                <input type="password" class="form-control" id="password-input" placeholder="Password">
+              </div>
+              <div style="display: none" id="alert" class="alert alert-danger" role="alert">
+                <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                <span class="sr-only">Error:</span> <span class="msg"></span>
+              </div>
+              <button type="submit" class="btn btn-default">Login</button>
+              <p><a href="/">Forgot Password?</a></p>
+              
+            </form>
+            <div class="form switch-link">
+              <p>No account? Sign up <a href="/signup">here</a></p>
+            </div>
           </div>
-          <div style="display: none" id="alert" class="alert alert-danger" role="alert">
-            <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
-            <span class="sr-only">Error:</span> <span class="msg"></span>
-          </div>
-          <button type="submit" class="btn btn-default">Login</button>
-          <p><a href="/">Forgot Password?</a></p>
-          
-        </form>
-        <div class="form switch-link">
-          <p>No account? Sign up <a href="/signup">here</a></p>
-        </div>
-        
-        <!-- Add itunes store and google play buttons -->
+        </div>      
       </div>
     </div>
   </div>
@@ -48,9 +49,12 @@
     <p>&copy; 2018 watchlist</p>
   </footer>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script type="text/javascript" src="js/login.js"></script>
 
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script type="text/javascript" src="js/login.js"></script>
 </body>
 
 </html>

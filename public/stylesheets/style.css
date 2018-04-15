@@ -51,8 +51,21 @@ footer p {
 /* ===== LOGIN / SIGNUP ===== */
 /* ========================== */
 
-.login-container {
+.container {
   margin-top:100px;
+}
+
+.background{
+  /* background: linear-gradient(to right, #353A3F 50%, #F4D03F 50%); */
+  background: linear-gradient(to right, #fff 50%, #F4D03F 50%);
+}
+
+.form {
+  /* border: 1px solid #ccc; */
+  border-radius:2px;
+  padding:20px 30px 5px 30px;
+  background-color:#353A3F;
+  color:#fff;
 }
 
 .form h1 {
@@ -61,11 +74,7 @@ footer p {
   margin-bottom:20px;
 }
 
-.form {
-  border: 1px solid #ccc;
-  border-radius:2px;
-  padding:20px 30px 5px 30px;
-}
+
 
 .form-control {
   border-radius:0;
@@ -116,4 +125,34 @@ footer p {
 
 .tv-img {
   width:300px;
+}
+
+
+/* ========================== */
+/* ========= Navbar ========= */
+/* ========================== */
+
+.navbar-brand {
+  color: #F4D03F !important;
+}
+
+.nav-link {
+  color:#fff !important;
+  transition: color 0.3s;
+}
+
+.nav-link:hover {
+  color:#F4D03F !important;
+}
+
+.dropdown-menu {
+  background-color:#353A3F;
+}
+
+.dropdown-divider {
+  color:#F4D03F;
+}
+
+.dropdown-item {
+  color: #fff;
 }
