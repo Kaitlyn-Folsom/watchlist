@@ -15,9 +15,11 @@ $(document).ready(function() {
     };
 
     if (!userData.name || !userData.email || !userData.password) {
+      $("#alert .msg").text("All fields are required");
+      $("#alert").fadeIn(500);
       return;
     }
-    // If we have an email and password, run the signUpUser function
+    // If we have all fields, run the signUpUser function
     signUpUser(userData.name, userData.email, userData.password);
     nameInput.val("");
     emailInput.val("");
@@ -38,6 +40,7 @@ $(document).ready(function() {
   }
 
   function handleLoginErr(err) {
+
     $("#alert .msg").text(err.responseJSON);
     console.log(err);
     $("#alert").fadeIn(500);

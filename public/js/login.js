@@ -12,7 +12,13 @@ $(document).ready(function() {
       password: passwordInput.val().trim()
     };
 
-    if (!userData.email || !userData.password) {
+    if (!userData.email) {
+      $("#alert .msg").text("Please enter your email");
+      $("#alert").fadeIn(500);
+      return;
+    } else if(!userData.password) {
+      $("#alert .msg").text("Please enter your password");
+      $("#alert").fadeIn(500);
       return;
     }
 

@@ -2,51 +2,57 @@
 <html lang="en">
 
 <head>
-  <title>Watchlist | Home</title>
+  <title>Watchlist</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/lumen/bootstrap.min.css">
   <link href="stylesheets/style.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Comfortaa:300,400|Nunito:300,400" rel="stylesheet">
 </head>
 
 <body>
-  <nav class="navbar navbar-default">
+  <!-- <nav class="navbar navbar-default">
     <div class="container-fluid">
       <div class="navbar-header">
       </div>
     </div>
-  </nav>
+  </nav> -->
   <div class="container">
-    <div class="row">
-      <h1>My Watchlist</h1>
-    </div>
-    <div class="row">
-      <div class="col-md-7">
+    <div class="row login-container">
+      <div class="col-md-4 col-md-offset-2">
         <!-- Add television graphics in this col -->
-        <img src="#" alt="Television png">
+        <img class="tv-img" src="images/flat-screen.png" alt="Television png">
+        <img class="tv-img" src="images/vintage-tv.jpg" alt="Television png">
       </div>
-      <div class="col-md-5">
-        <h3>Login Form</h3>
-        <form class="login">
+      <div class="col-md-4">
+        <form class="form login">
+            <h1>My Watchlist</h1>
           <div class="form-group">
-            <label for="exampleInputEmail1">Email address</label>
             <input type="email" class="form-control" id="email-input" placeholder="Email">
           </div>
           <div class="form-group">
-            <label for="exampleInputPassword1">Password</label>
             <input type="password" class="form-control" id="password-input" placeholder="Password">
           </div>
+          <div style="display: none" id="alert" class="alert alert-danger" role="alert">
+            <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+            <span class="sr-only">Error:</span> <span class="msg"></span>
+          </div>
           <button type="submit" class="btn btn-default">Login</button>
+          <br />
+          <p><a href="/">Forgot Password?</a></p>
+          
         </form>
-        <br />
-        <p>Or sign up <a href="/signup">here</a></p>
+        <div class="form switch-link">
+          <p>No account? Sign up <a href="/signup">here</a></p>
+        </div>
+        
         <!-- Add itunes store and google play buttons -->
       </div>
     </div>
   </div>
 
   <footer>
-    About copyright 2018 watchlist
+    <p>&copy; 2018 watchlist</p>
   </footer>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

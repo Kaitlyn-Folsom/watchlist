@@ -1,4 +1,101 @@
-form.signup,
-form.login {
-  margin-top: 50px;
+
+*{
+	margin:0;
+	padding:0;
+	box-sizing:border-box;
+
+}
+
+*:focus{
+	outline:none;
+}
+
+html {
+	text-rendering: optimizeLegibility;
+}
+
+body{
+  font-size:20px;
+  font-family: 'Nunito', "sans-serif";font-weight:300;
+}
+
+.container{
+	overflow: hidden;
+	min-width:100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin:10px 0;
+  font-size:20px;
+  font-family: 'Comfortaa', cursive;
+}
+
+.row{
+	margin:0 auto;
+  width:100%;
+}
+
+footer {
+  position:fixed;
+  bottom:0;
+  width:100%;
+}
+
+footer p {
+  text-align:center;
+  margin: 5px auto;
+  font-size:60%;
+}
+
+/* ========================== */
+/* ===== LOGIN / SIGNUP ===== */
+/* ========================== */
+
+.login-container {
+  margin-top:150px;
+}
+
+.form h1 {
+  text-align: center;
+  font-size: 150%;
+  margin-bottom:20px;
+}
+
+.form {
+  border: 1px solid #ccc;
+  border-radius:2px;
+  padding:20px 30px;
+}
+
+.form h2 {
+  text-align:center;
+}
+
+.form button {
+  width:100%;
+}
+
+.alert {
+  font-size:70%;
+  padding:0;
+  background:none;
+  border:none;
+  color:#ff1103;
+  margin:0 auto;
+  margin-bottom:10px;
+}
+
+.form p {
+  margin-top:10px;
+  font-size:70%;
+  text-align:center;
+}
+
+.switch-link {
+  margin-top: 20px;
+  text-align:center;
+}
+
+.tv-img {
+  width:300px;
 }
