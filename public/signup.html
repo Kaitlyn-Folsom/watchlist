@@ -7,6 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/lumen/bootstrap.min.css">
   <link href="stylesheets/style.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Comfortaa:300,400|Nunito:300,400" rel="stylesheet">
 </head>
 
 <body>
@@ -16,23 +17,23 @@
       </div>
     </div>
   </nav>
-  <div class="container">
+  <div class="container signup-container">
     About the App!
     <div class="row">
-      <div class="col-md-6 col-md-offset-3">
-        <h2>Sign Up Form</h2>
-        <form class=" form signup">
+      <div class="col-md-4 col-md-offset-2">
+
+      </div>
+      <div class="col-md-4">
+        <form class="form signup">
+          <h1>Watchlist</h1>
           <div class="form-group">
-            <label for="name">Name</label>
             <input type="text" class="form-control" id="name-input" placeholder="Name">
           </div>
           <div class="form-group">
-            <label for="exampleInputEmail1">Email address</label>
             <input type="email" class="form-control" id="email-input" placeholder="Email">
           </div>
           <p class="alertmsg"></p>
           <div class="form-group">
-            <label for="exampleInputPassword1">Password</label>
             <input type="password" class="form-control" id="password-input" placeholder="Password">
           </div>
           <div style="display: none" id="alert" class="alert alert-danger" role="alert">
@@ -41,8 +42,9 @@
           </div>
           <button type="submit" class="btn btn-default">Sign Up</button>
         </form>
-        <br />
-        <p>Or log in <a href="/login">here</a></p>
+        <div class="form switch-link">
+            <p>Have an account? Login <a href="/login">here</a></p>
+          </div>
       </div>
     </div>
   </div>
