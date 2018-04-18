@@ -33,4 +33,9 @@ module.exports = function(app) {
     //res.render("signup", req.user);
   });
 
+  app.get("/shows", isAuthenticated, function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/shows.html"));
+    //res.render("signup", req.user);
+  });
+
 };
