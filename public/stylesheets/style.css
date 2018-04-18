@@ -76,8 +76,26 @@ nav .dropdown {
   margin-left:30px;
 }
 
+.show-title{
+ background-color:#353A3F;
+ color:#F4D03F;
+ padding:15px auto 15px auto;
+}
+
+.watchlist-btn {
+  position:absolute;
+  right:10px;
+  margin:10px auto;
+}
+
+.add-to-watchlist-btn:hover {
+  color:#353A3F !important;
+  background:#F4D03F;
+}
+
 #show-title {
   font-size:200%;
+  font-weight:bold;
 }
 /* ========================== */
 /* ========= FOOTER ========= */

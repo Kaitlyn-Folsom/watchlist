@@ -24,20 +24,24 @@ $(document).ready(function() {
       $("#show-img").html("<img src='" + response[0].show.image.medium + "' alt='Show Poster'>");
       $("#show-title").text(response[0].show.name);
       $("#show-description").html("<p>" + response[0].show.summary + "</p>");
-      $("#network").html("<p>Network: " + response[0].show.network.name + "</p>");
-      $("#genre").html("<p>Genre: " + response[0].show.genres + "</p>");
+      $("#network").html("<p><strong>Network: </strong>" + response[0].show.network.name + "</p>");
+      $("#genre").html("<p><strong>Genre: </strong>" + response[0].show.genres + "</p>");
       $("#results").html("<p>" + response[0].show.schedule.days + " " + response[0].show.schedule.time + "</p>");
-      $("#premiere").html("<p>Premiere Date: " + response[0].show.premiered + "</p>");
+      $("#premiere").html("<p><strong>Premiere Date: </strong>" + response[0].show.premiered + "</p>");
       $("#results").html("<p>" + response[0].show.status + "</p>");
       
       if(response[0].show.officialSite !== null) {
         $("#site-link").html("<a target='_blank' href='" + response[0].show.officialSite + "'>" + response[0].show.officialSite + "</a>");
       } else {
+        $("site-link").css("display:none");
+      }
+
+      if (response[0].show.status == "Running") {
+        $(".watchlist-btn").html("<a class='btn btn-outline-warning add-to-watchlist-btn'>Add to Watchlist</a>");
+      } else {
 
       }
-     
-      $("#results").append("<br>");
-      $("#results").append("<button class='btn btn-info'>Add to Watchlist</button>");
+
 
       var showID = response[0].show.id;
       var seasonsQuery = "http://api.tvmaze.com/shows/" + showID + "/seasons";
@@ -49,9 +53,7 @@ $(document).ready(function() {
           for (var i = 0; i < data.length; i++) {
             var seasonID = data[i].id;
             console.log(seasonID);
-            $("#episode-results").append("<button class='btn btn-info season-btn' id='" + i + "' data-id='" + seasonID + "'>Season: " + data[i].number + "</button>");
-
-            
+            $("#season-btns").append("<button class='btn btn-warning season-btn' id='" + i + "' data-id='" + seasonID + "'>Season: " + data[i].number + "</button>");
 
             var seasonBtn = $("#" + i);
 
