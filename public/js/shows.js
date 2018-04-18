@@ -1,4 +1,9 @@
 $(document).ready(function() {
+
+  $.get("/api/user_data").then(function(data) {
+    $(".member-name").text(data.name);
+  });
+  
   var allShowsQuery = "http://api.tvmaze.com/shows";
 
   $.ajax({
