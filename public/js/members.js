@@ -8,9 +8,11 @@ $(document).ready(function() {
   // This function handles events where a movie button is clicked
   $(".searchTV").on("click", function(event) {
     event.preventDefault();
+
     $("#episode-results").empty();
     // This line grabs the input from the textbox
     var show = $(".tv-input").val().trim();
+
     var showInfoQuery = "http://api.tvmaze.com/search/shows?q=" + show + "&embed=episodes";
 
     $.ajax({
@@ -18,17 +20,18 @@ $(document).ready(function() {
       method: "GET"
     }).done(function(response) {
       console.log(response[0].show);
-      $("#results").html("<h2>" + response[0].show.name + "</h2>");
-      $("#results").append("<img src='" + response[0].show.image.medium + "'>");
-      $("#results").append("<p>" + response[0].show.summary + "</p>");
-      $("#results").append("<p>Network: " + response[0].show.network.name + "</p>");
-      $("#results").append("<p>Genre: " + response[0].show.genres + "</p>");
-      $("#results").append("<p>" + response[0].show.schedule.days + " " + response[0].show.schedule.time + "</p>");
-      $("#results").append("<p>Premiere Date: " + response[0].show.premiered + "</p>");
-      $("#results").append("<p>" + response[0].show.status + "</p>");
+      $(".tv-input").val("");
+      $("#show-img").html("<img src='" + response[0].show.image.medium + "' alt='Show Poster'>");
+      $("#show-title").text(response[0].show.name);
+      $("#show-description").html("<p>" + response[0].show.summary + "</p>");
+      $("#network").html("<p>Network: " + response[0].show.network.name + "</p>");
+      $("#genre").html("<p>Genre: " + response[0].show.genres + "</p>");
+      $("#results").html("<p>" + response[0].show.schedule.days + " " + response[0].show.schedule.time + "</p>");
+      $("#premiere").html("<p>Premiere Date: " + response[0].show.premiered + "</p>");
+      $("#results").html("<p>" + response[0].show.status + "</p>");
       
       if(response[0].show.officialSite !== null) {
-        $("#results").append("<a target='_blank' href='" + response[0].show.officialSite + "'>" + response[0].show.officialSite + "</a>");
+        $("#site-link").html("<a target='_blank' href='" + response[0].show.officialSite + "'>" + response[0].show.officialSite + "</a>");
       } else {
 
       }

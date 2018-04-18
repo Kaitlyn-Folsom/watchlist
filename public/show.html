@@ -9,13 +9,13 @@
 
   <link rel="shortcut icon" href="#" type="image/x-icon">
   
+
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="stylesheets/style.css">
   <link href="https://fonts.googleapis.com/css?family=Comfortaa:300,400|Nunito:300,400" rel="stylesheet">
 
 </head>
 <body>
-  <!-- ========== BEGIN NAVBAR ============= -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <a class="navbar-brand" href="/">
       <img src="/images/tv-icon.png" width="30" height="30" class="d-inline-block align-top" alt="TV Icon">
@@ -31,14 +31,12 @@
           <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Schedule</a>
+          <a class="nav-link" href="#">Weekly Schedule</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Shows</a>
-        </li>
+        
       </ul>
-      <form class="form-inline my-2 my-lg-0 search-bar">
-        <input class="form-control mr-sm-2 tv-input" type="search" placeholder="Search Shows" aria-label="Search">
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2 tv-input" type="search" placeholder="Search" aria-label="Search">
         <button class="btn btn-outline-info my-2 my-sm-0 searchTV" type="submit">Search</button>
       </form>
       <ul class="navbar-nav">
@@ -49,42 +47,109 @@
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <a class="dropdown-item" href="#">Account</a>
             <a class="dropdown-item" href="#">About</a>
-              <div class="dropdown-divider"></div>
+            <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="/logout">Logout</a>
           </div>
         </li>
       </ul>     
     </div>
-  </nav>   <!-- END NAVBAR -->
-  <div class="wrapper">
-    <div class="container">
-      <!-- <div id="results"> -->
-          <div class="row">
-            <div class="col-lg-3">
-              <div id="show-img"></div>
-            </div>
-            <div class="col-lg-9">
-              <h2 id="show-title"></h2>
-              <p id="show-description"></p>
-              <p id="network"></p>
-              <p id="genre"></p>
-              <p id="premiere"></p>
-              <div id="site-link"></div>
-            </div>
-          </div>
-      </div>
+  </nav>
 
-      <div id="episode-results">
-        
-      </div>
+  <div class="container">
 
-      <div id="episodes"></div>
-    <!-- </div>  -->
+    <!-- <input class="input tv-input" type="text">
+    <button class="btn btn-secondary searchTV" type="submit">Search</button> -->
 
-    <div class="push"></div>
-  </div>
+    <div id="results">
 
-  <footer class="footer">
+    </div>
+
+    <div id="episode-results">
+      
+    </div>
+
+    <div id="episodes"></div>
+
+    <!-- <div class="table-responsive">
+      <table class="table table-bordered">
+        <th colspan="7" class="table-info">Sunday</th>
+          <tr>
+            <td></td>
+            <td>8:00</td>
+            <td>8:30</td>
+            <td>9:00</td>
+            <td>9:30</td>
+            <td>10:00</td>
+            <td>10:30</td>
+          </tr>
+          <tr>
+            <td>CBS</td>
+          </tr>
+          <tr>
+            <td>NBC</td>
+          </tr>
+          <tr>
+            <td>FOX</td>
+          </tr>
+        <th colspan="6">Monday</th>
+          <tr>
+            <td>8:00</td>
+            <td>8:30</td>
+            <td>9:00</td>
+            <td>9:30</td>
+            <td>10:00</td>
+            <td>10:30</td>
+          </tr>
+        <th colspan="6">Tuesday</th>
+          <tr>
+            <td>8:00</td>
+            <td>8:30</td>
+            <td>9:00</td>
+            <td>9:30</td>
+            <td>10:00</td>
+            <td>10:30</td>
+          </tr>
+        <th colspan="6">Wednesday</th>
+          <tr>
+            <td>8:00</td>
+            <td>8:30</td>
+            <td>9:00</td>
+            <td>9:30</td>
+            <td>10:00</td>
+            <td>10:30</td>
+          </tr>
+        <th colspan="6">Thursday</th>
+          <tr>
+            <td>8:00</td>
+            <td>8:30</td>
+            <td>9:00</td>
+            <td>9:30</td>
+            <td>10:00</td>
+            <td>10:30</td>
+          </tr>
+        <th colspan="6">Friday</th>
+          <tr>
+            <td>8:00</td>
+            <td>8:30</td>
+            <td>9:00</td>
+            <td>9:30</td>
+            <td>10:00</td>
+            <td>10:30</td>
+          </tr>
+        <th colspan="6">Monday</th>
+          <tr>
+            <td>8:00</td>
+            <td>8:30</td>
+            <td>9:00</td>
+            <td>9:30</td>
+            <td>10:00</td>
+            <td>10:30</td>
+          </tr>
+      </table>
+    </div> -->
+  </div> 
+
+  <footer>
     <p>Watchlist &copy; 2018</p>
   </footer>
 

@@ -10,18 +10,26 @@
 	outline:none;
 }
 
-html {
-	text-rendering: optimizeLegibility;
-}
-
+html,
 body{
   font-size:20px;
   font-family: 'Nunito', "sans-serif";font-weight:300;
+  height:100%;
+  margin:0;
+	text-rendering: optimizeLegibility;
 }
 
 .container{
 	overflow: hidden;
-	min-width:100%;
+  min-width:100%;
+  min-height:100%;
+  margin-bottom:-50px;
+}
+
+.wrapper {
+  height: auto !important;
+  height: 100%;
+  min-height: 100%;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -35,15 +43,59 @@ h1, h2, h3, h4, h5, h6 {
   width:100%;
 }
 
+/* ========================== */
+/* ========= NAVBAR ========= */
+/* ========================== */
+
+nav .search-bar {
+  margin-right:50px;
+}
+
+nav .searchTV {
+  color:#F4D03F;
+  border-color:#F4D03F;
+}
+
+nav .searchTV:hover {
+  background-color:#F4D03F;
+  border-color:#F4D03F;
+  color:#353A3F;
+}
+
+nav .dropdown {
+  margin-right:20px;
+}
+
+/* ========================== */
+/* ====== SHOW RESULTS ====== */
+/* ========================== */
+
+#show-img img {
+  height:400px;
+  width:auto;
+  margin-left:30px;
+}
+
+#show-title {
+  font-size:200%;
+}
+/* ========================== */
+/* ========= FOOTER ========= */
+/* ========================== */
+
+footer,
+.push {
+  height: 60px;
+}
+
 footer {
-  position:fixed;
-  bottom:0;
-  width:100%;
+  background:#F4D03F;
+  height:50px;
+  padding-top:12px;
 }
 
 footer p {
   text-align:center;
-  margin: 5px auto;
   font-size:60%;
 }
 
