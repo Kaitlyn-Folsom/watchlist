@@ -25,7 +25,7 @@ function searchBar() {
 
     // This line grabs the input from the textbox
     var show = $(".tv-input").val().trim();
-    
+
     $(".show-info-container").css("display", "block");
 
     // API get show info query
@@ -83,7 +83,7 @@ function searchBar() {
             var seasonBtn = $("#" + i);
 
             seasonBtn.click(function() {
-              $("#episodes-list").empty();
+              // $("#episodes-list").empty();
               var seasonBtnID = $(this).attr("data-id");
               var episodesQuery = "http://api.tvmaze.com/seasons/" + seasonBtnID + "/episodes"; //number must be seasonID
 
@@ -92,11 +92,19 @@ function searchBar() {
                 method: "GET"
               }).done(function(episodes) {
                 console.log(episodes);
-
+                $("#episode-container").empty();
                 for (var i = 0; i < episodes.length; i++) {
-                  $("#episodes-list").append("<h3>" + episodes[i].name + "</h3>");
-                  $("#episodes-list").append("<h3>" + episodes[i].summary + "</h3>");
-                  $("#episodes-list").append("<p>" + episodes[i].airdate + "</p>");
+                  $("#episode-container").append("<h3>" + episodes[i].name + "</h3>");
+                  $("#episode-container").append("<p>" + episodes[i].season + " X " + episodes[i].number + "</p>");
+                  $("#episode-container").append("<p>Airdate: " + episodes[i].airdate + "</p>");
+
+                  if(episodes[i].summary !== null) {
+                    $("#episode-container").append("<p>" + episodes[i].summary + "</p>");
+                  } else {
+                    
+                  }
+
+                  $("#episode-container").append("<hr />");
                 }
               });
 
