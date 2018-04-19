@@ -18,13 +18,15 @@
   },
   "homepage": "https://github.com/Jewel0106/watchlist#readme",
   "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.18.2",
     "express": "^4.16.3",
-    "mysql2": "^1.5.3",
-    "sequelize": "^4.37.6",
-    "bcrypt-nodejs": "0.0.3",
     "express-session": "^1.14.2",
+    "moment": "^2.22.1",
+    "moment-timezone": "^0.5.16",
+    "mysql2": "^1.5.3",
     "passport": "^0.3.2",
-    "passport-local": "^1.0.0"
+    "passport-local": "^1.0.0",
+    "sequelize": "^4.37.6"
   }
 }
