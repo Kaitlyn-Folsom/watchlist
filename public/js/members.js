@@ -23,11 +23,10 @@ $(document).ready(function() {
 function searchBar() {
   event.preventDefault();
 
-    // clear show info 
-    $("#episode-results").empty();
-
     // This line grabs the input from the textbox
     var show = $(".tv-input").val().trim();
+    
+    $(".show-info-container").css("display", "block");
 
     // API get show info query
     var showInfoQuery = "http://api.tvmaze.com/search/shows?q=" + show + "&embed=episodes";
@@ -37,6 +36,7 @@ function searchBar() {
       method: "GET"
     }).done(function(response) {
       console.log(response[0].show);
+
       $(".tv-input").val("");
       $("#show-img").html("<img src='" + response[0].show.image.medium + "' alt='Show Poster'>");
       $("#show-title").text(response[0].show.name);
