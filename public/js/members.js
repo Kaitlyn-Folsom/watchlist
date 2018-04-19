@@ -1,5 +1,3 @@
-
-
 $(document).ready(function() {
 
     // This file just does a GET request to figure out which user is logged in
@@ -65,46 +63,47 @@ function searchBar() {
         $(".watchlist-btn").empty();
       }
 
-
-
       getSeasons();
 
-        function getSeasons() {
-          var showID = response[0].show.id;
-          var seasonsQuery = "http://api.tvmaze.com/shows/" + showID + "/seasons";
+      function getSeasons() {
+        var showID = response[0].show.id;
+        var seasonsQuery = "http://api.tvmaze.com/shows/" + showID + "/seasons";
 
-          $.ajax({
-            url: seasonsQuery,
-            method: "GET"
-          }).done(function(seasons) {
-            console.log(seasons);
+        $.ajax({
+          url: seasonsQuery,
+          method: "GET"
+        }).done(function(seasons) {
+          console.log(seasons);
 
-            for (var i = 0; i < seasons.length; i++) {
-              var seasonID = seasons[i].id;
-              console.log(seasonID);
-              $("#season-btns").append("<button class='btn btn-warning season-btn' id='" + i + "' data-id='" + seasonID + "'>Season: " + seasons[i].number + "</button>");
+          for (var i = 0; i < seasons.length; i++) {
+            var seasonID = seasons[i].id;
+            console.log(seasonID);
+            $("#season-btns").append("<button class='btn btn-outline-info season-btn' id='" + i + "' data-id='" + seasonID + "'>Season: " + seasons[i].number + "</button>");
 
-              var seasonBtn = $("#" + i);
+            var seasonBtn = $("#" + i);
 
-              seasonBtn.click(function() {
-                var seasonBtnID = $(this).attr("data-id");
-                var episodesQuery = "http://api.tvmaze.com/seasons/" + seasonBtnID + "/episodes"; //number must be seasonID
+            seasonBtn.click(function() {
+              $("#episodes-list").empty();
+              var seasonBtnID = $(this).attr("data-id");
+              var episodesQuery = "http://api.tvmaze.com/seasons/" + seasonBtnID + "/episodes"; //number must be seasonID
 
-                $.ajax({
-                  url: episodesQuery,
-                  method: "GET"
-                }).done(function(episodes) {
-                  console.log(episodes);
-                  
-                  for (var i = 0; i < episodes.length; i++) {
-                    $("#episodes").append("<p>" + episodes[i].name + "</p>");
-                  }
-                });
+              $.ajax({
+                url: episodesQuery,
+                method: "GET"
+              }).done(function(episodes) {
+                console.log(episodes);
 
+                for (var i = 0; i < episodes.length; i++) {
+                  $("#episodes-list").append("<h3>" + episodes[i].name + "</h3>");
+                  $("#episodes-list").append("<h3>" + episodes[i].summary + "</h3>");
+                  $("#episodes-list").append("<p>" + episodes[i].airdate + "</p>");
+                }
               });
-            } // End for loop
-          }); // End seasonsQuery Ajax call
-        } // End getSeasons function
+
+            });
+          } // End for loop
+        }); // End seasonsQuery Ajax call
+      } // End getSeasons function
 
     }); // End getShow Ajax call
 } // End searchBar function
