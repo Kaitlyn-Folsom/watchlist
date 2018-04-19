@@ -24,6 +24,7 @@ body{
   min-width:100%;
   min-height:100%;
   margin-bottom:-50px;
+  padding-left:20px;
 }
 
 .wrapper {
@@ -76,7 +77,6 @@ nav .dropdown {
 #show-img img {
   height:400px;
   width:auto;
-  margin-left:30px;
 }
 
 .show-title{
@@ -100,6 +100,61 @@ nav .dropdown {
   font-size:200%;
   font-weight:bold;
 }
+
+#season-btns {
+  margin: 20px auto;
+  background-color:#353A3F;
+  padding:10px 15px;
+  text-align:center;
+  display:none;
+}
+
+.season-link {
+  padding:5px 15px;
+  margin: 0 auto;
+  color:#fff !important;
+  border-radius:0px;
+  border-left:2px solid #353A3F;
+  border-right: 2px solid #353A3F;
+  transition: color 0.3s, border-left 0.3s, border-right 0.3s;
+
+}
+
+.season-link:hover {
+  color:#F4D03F !important;
+  border-left:2px solid #F4D03F;
+  border-right: 2px solid #F4D03F;
+}
+
+.season-link-active {
+  color:#F4D03F !important;
+  border-left:2px solid #F4D03F;
+  border-right: 2px solid #F4D03F;
+}
+
+/* ========================== */
+/* == EPISODES LIST RESULTS == */
+/* ========================== */
+
+#episode-container {
+  margin-top:20px;
+  display:none;
+}
+
+#episode-container h3 {
+  font-size:130%;
+  font-weight:bold;
+}
+
+#episode-container p {
+  font-size:90%;
+  margin-bottom:10px;
+}
+
+.choose-text {
+  text-align:center;
+}
+
 /* ========================== */
 /* ========= FOOTER ========= */
 /* ========================== */
@@ -136,9 +191,7 @@ footer p {
   border: 1px solid #353A3F;
   border-radius:2px;
   padding:20px 30px 5px 30px;
-  /* background-color:#353A3F; */
   background-color:#F4D03F ;
-  /* color:#fff; */
 }
 
 .form h1 {

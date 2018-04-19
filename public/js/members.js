@@ -66,6 +66,7 @@ function searchBar() {
       getSeasons();
 
       function getSeasons() {
+        
         var showID = response[0].show.id;
         var seasonsQuery = "http://api.tvmaze.com/shows/" + showID + "/seasons";
 
@@ -75,33 +76,43 @@ function searchBar() {
         }).done(function(seasons) {
           console.log(seasons);
 
+          $("#season-btns").css("display", "block");
+          $("#episode-container").css("display", "block");
+
           for (var i = 0; i < seasons.length; i++) {
             var seasonID = seasons[i].id;
             console.log(seasonID);
-            $("#season-btns").append("<button class='btn btn-outline-info season-btn' id='" + i + "' data-id='" + seasonID + "'>Season: " + seasons[i].number + "</button>");
+            $("#season-btns").append("<a class='btn season-link' id='" + i + "' data-id='" + seasonID + "'>Season: " + seasons[i].number + "</a>");
 
             var seasonBtn = $("#" + i);
 
             seasonBtn.click(function() {
-              // $("#episodes-list").empty();
+              
+              // Add active class to episode button on click
+
               var seasonBtnID = $(this).attr("data-id");
               var episodesQuery = "http://api.tvmaze.com/seasons/" + seasonBtnID + "/episodes"; //number must be seasonID
-
               $.ajax({
                 url: episodesQuery,
                 method: "GET"
               }).done(function(episodes) {
                 console.log(episodes);
                 $("#episode-container").empty();
+
                 for (var i = 0; i < episodes.length; i++) {
                   $("#episode-container").append("<h3>" + episodes[i].name + "</h3>");
-                  $("#episode-container").append("<p>" + episodes[i].season + " X " + episodes[i].number + "</p>");
-                  $("#episode-container").append("<p>Airdate: " + episodes[i].airdate + "</p>");
+                  $("#episode-container").append("<p class='episode-season'>" + episodes[i].season + " X " + episodes[i].number + "</p>");
+
+                  if(episodes[i].summary !== null) {
+                    $("#episode-container").append("<p><strong>Airdate: </strong>" + episodes[i].airdate + "</p>");
+                  } else {
+                    $("#episode-container").append("<p><strong>Airdate: </strong>TBD</p>");
+                  }
 
                   if(episodes[i].summary !== null) {
                     $("#episode-container").append("<p>" + episodes[i].summary + "</p>");
                   } else {
-                    
+                    $("#episode-container").append("<p>No summary currently available</p>");
                   }
 
                   $("#episode-container").append("<hr />");
