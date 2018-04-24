@@ -56,14 +56,14 @@ module.exports = function(app) {
 
     // Get route for returning posts of a specific category
     app.get("/shows/:name", function(req, res) {
-      db.Post.findOne({
-        where: {
-          category: req.params.id
-        }
-      })
-      .then(function(dbPost) {
-        res.json(dbPost);
-      });
+      // db.Post.findOne({
+      //   where: {
+      //     category: req.params.id
+      //   }
+      // })
+      // .then(function(dbPost) {
+      //   res.json(dbPost);
+      // });
     });
 
 };
