@@ -289,3 +289,8 @@ footer p {
 /* ========================== */
 /* ======= SHOWS PAGE ======= */
 /* ========================== */
+
+#shows-list h3 {
+  text-decoration: none;
+  font-size:150%;
+}

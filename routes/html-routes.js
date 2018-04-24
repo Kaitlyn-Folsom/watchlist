@@ -38,6 +38,7 @@ module.exports = function(app) {
     //res.render("signup", req.user);
   });
 
+
   app.get("/schedule", isAuthenticated, function(req, res) {
     res.sendFile(path.join(__dirname, "../public/watchlist.html"));
     //res.render("signup", req.user);

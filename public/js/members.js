@@ -19,6 +19,33 @@ $(document).ready(function() {
 // ===============
 // FUNCTIONS
 // ===============
+function search() {
+  var currentURL = window.location.origin;
+
+    // This line grabs the input from the textbox
+    var show = $(".tv-input").val().trim();
+
+    var showInfoQuery = "http://api.tvmaze.com/search/shows?q=" + show + "&embed=episodes";
+
+   // The AJAX function uses the URL of our API to GET the data associated with it (initially set to localhost)
+   $.ajax({ 
+     url: currentURL + "/show/:id", 
+     method: "GET" })
+   .done(function(showData) {
+
+
+     // Here we are logging the URL so we have access to it for troubleshooting
+     console.log("------------------------------------");
+     console.log("URL: " + currentURL + "/show/:id");
+     console.log("------------------------------------");
+
+     // Here we then log the NYTData to console, where it will show up as an object.
+     console.log(showData);
+     console.log("------------------------------------");
+
+   });
+};
+
 
 function searchBar() {
   event.preventDefault();

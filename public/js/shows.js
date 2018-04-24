@@ -40,7 +40,7 @@ function getAllShows() {
       var showID = shows[i].id;
 
       var showGrid = $("#shows-list");
-      showGrid.append("<h3 id=" + i + " data-id='" + showID + "'>" + shows[i].name +"</h3><img src='" + shows[i].image.medium + "' alt='Show Poster'>");
+      showGrid.append("<a href='#'><h3 id='" + i + "' data-id='" + showID + "'>" + shows[i].name +"</h3><img src='" + shows[i].image.medium + "' alt='Show Poster'></a>");
       // showGrid.append("<h3 id=" + i + " data-id='" + showID + "'>" + shows[i].name +"</h3>");
       // showGrid.append("<img src='" + shows[i].image.medium + "' alt='Show Poster'>");
       // showGrid.append("</div></div>");
@@ -52,7 +52,6 @@ function getAllShows() {
         console.log("ID clicked: " + showID);
         // console.log(showID);
         var showInfo = "http://api.tvmaze.com/shows/" + episodeLinkID;
-        console.log("hitting function");
         $.ajax({
           url: showInfo,
           method: "GET"
