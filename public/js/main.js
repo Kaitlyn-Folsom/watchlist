@@ -1,14 +1,19 @@
 
 $(document).ready(function() {
+  var URL = window.location;
 
-  getUserData();
-  getDay();
-  getAllShows();
-
-    // Display show info on search button click
-    $(".searchTV").on("click", function(event) {
+    if (URL.pathname == "/members") {
+      getUserData();
+      getDay();
+    } else if (URL.pathname == "/shows") {
+      getUserData();
+      getAllShows();
       searchBar();
-    });
+    
+    } else if (URL.pathname == "/schedule") {
+      getUserData();
+    }
+
 });
 
 function getUserData() {
@@ -49,6 +54,7 @@ function getDay() {
 };
 
 function searchBar() {
+  $(".searchTV").on("click", function(event) {
   event.preventDefault();
 
     // This line grabs the input from the textbox
@@ -103,8 +109,9 @@ function searchBar() {
           method: "GET"
         }).done(function(seasons) {
           console.log(seasons);
-
+          $("#season-btns").empty();
           $("#season-btns").css("display", "block");
+          $("#episode-container").empty();
           $("#episode-container").css("display", "block");
 
           for (var i = 0; i < seasons.length; i++) {
@@ -115,44 +122,51 @@ function searchBar() {
             var seasonBtn = $("#" + i);
 
             seasonBtn.click(function() {
-              
-              // Add active class to episode button on click
 
-              var seasonBtnID = $(this).attr("data-id");
-              var episodesQuery = "http://api.tvmaze.com/seasons/" + seasonBtnID + "/episodes"; //number must be seasonID
-              $.ajax({
-                url: episodesQuery,
-                method: "GET"
-              }).done(function(episodes) {
-                console.log(episodes);
-                $("#episode-container").empty();
+                var seasonBtnID = $(this).attr("data-id");
+                var episodesQuery = "http://api.tvmaze.com/seasons/" + seasonBtnID + "/episodes"; //number must be seasonID
 
-                for (var i = 0; i < episodes.length; i++) {
-                  $("#episode-container").append("<h3>" + episodes[i].name + "</h3>");
-                  $("#episode-container").append("<p class='episode-season'>" + episodes[i].season + " X " + episodes[i].number + "</p>");
+                $.ajax({
+                  url: episodesQuery,
+                  method: "GET"
+                }).done(function(episodes) {
+                  console.log(episodes);
+                  $("#episode-container").empty();
 
-                  if(episodes[i].summary !== null) {
-                    $("#episode-container").append("<p><strong>Airdate: </strong>" + episodes[i].airdate + "</p>");
-                  } else {
-                    $("#episode-container").append("<p><strong>Airdate: </strong>TBD</p>");
-                  }
+                  
+                    for (var i = 0; i < episodes.length; i++) {
+                      if (episodes[i].number !== null) {
+                        $("#episode-container").append("<h3>" + episodes[i].name + "</h3>");
+                      
+                        $("#episode-container").append("<p class='episode-season'>" + episodes[i].season + " X " + episodes[i].number + "</p>");
 
-                  if(episodes[i].summary !== null) {
-                    $("#episode-container").append("<p>" + episodes[i].summary + "</p>");
-                  } else {
-                    $("#episode-container").append("<p>No summary currently available</p>");
-                  }
+                        if(episodes[i].summary !== null) {
+                          $("#episode-container").append("<p><strong>Airdate: </strong>" + episodes[i].airdate + "</p>");
+                        } else {
+                          $("#episode-container").append("<p><strong>Airdate: </strong>TBD</p>");
+                        }
 
-                  $("#episode-container").append("<hr />");
-                }
-              });
+                        if(episodes[i].summary !== null) {
+                          $("#episode-container").append("<p>" + episodes[i].summary + "</p>");
+                        } else {
+                          $("#episode-container").append("<p>No summary currently available</p>");
+                        }
 
+                        $("#episode-container").append("<hr />");
+                      }
+                    }
+                    
+                });
             });
+
+            
           } // End for loop
+
         }); // End seasonsQuery Ajax call
       } // End getSeasons function
 
     }); // End getShow Ajax call
+  });
 } // End searchBar function
 
 function getAllShows() {
