@@ -122,10 +122,16 @@ function searchBar() {
             var seasonBtn = $("#" + i);
 
             seasonBtn.click(function() {
-
+              if ($(".season-link").hasClass("season-link-active")) {
+                $(".season-link").removeClass("season-link-active");
+              }
+              
+                $(this).addClass("season-link-active");
+              
+              
                 var seasonBtnID = $(this).attr("data-id");
-                var episodesQuery = "http://api.tvmaze.com/seasons/" + seasonBtnID + "/episodes"; //number must be seasonID
-
+                var episodesQuery = "http://api.tvmaze.com/seasons/" + seasonBtnID + "/episodes"; 
+               
                 $.ajax({
                   url: episodesQuery,
                   method: "GET"
@@ -133,7 +139,6 @@ function searchBar() {
                   console.log(episodes);
                   $("#episode-container").empty();
 
-                  
                     for (var i = 0; i < episodes.length; i++) {
                       if (episodes[i].number !== null) {
                         $("#episode-container").append("<h3>" + episodes[i].name + "</h3>");
@@ -158,7 +163,6 @@ function searchBar() {
                     
                 });
             });
-
             
           } // End for loop
 
