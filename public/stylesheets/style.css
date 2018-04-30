@@ -48,21 +48,6 @@ h1, h2, h3, h4, h5, h6 {
 /* ========= NAVBAR ========= */
 /* ========================== */
 
-nav .search-bar {
-  margin-right:50px;
-}
-
-nav .searchTV {
-  color:#F4D03F;
-  border-color:#F4D03F;
-}
-
-nav .searchTV:hover {
-  background-color:#F4D03F;
-  border-color:#F4D03F;
-  color:#353A3F;
-}
-
 nav .dropdown {
   margin-right:20px;
 }
@@ -178,16 +163,6 @@ footer p {
 /* ========================== */
 /* ===== LOGIN / SIGNUP ===== */
 /* ========================== */
-
-
-.container {
-  /* margin-top:100px; */
-}
-
-
-.background img{
-
-}
 
 .form {
   border: 1px solid #353A3F;

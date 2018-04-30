@@ -125,7 +125,7 @@ function searchBar() {
               if ($(".season-link").hasClass("season-link-active")) {
                 $(".season-link").removeClass("season-link-active");
               }
-              
+
                 $(this).addClass("season-link-active");
               
               
@@ -196,9 +196,6 @@ function getAllShows() {
 
       var showGrid = $("#shows-list");
       showGrid.append("<a href='#'><h3 id='" + i + "' data-id='" + showID + "'>" + shows[i].name +"</h3><img src='" + shows[i].image.medium + "' alt='Show Poster'></a>");
-      // showGrid.append("<h3 id=" + i + " data-id='" + showID + "'>" + shows[i].name +"</h3>");
-      // showGrid.append("<img src='" + shows[i].image.medium + "' alt='Show Poster'>");
-      // showGrid.append("</div></div>");
   
       var showLink = $("#" + i);
         
