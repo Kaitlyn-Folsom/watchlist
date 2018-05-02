@@ -69,11 +69,23 @@ function searchBar() {
       url: showInfoQuery,
       method: "GET"
     }).done(function(response) {
+      console.log("You searched for :");
       console.log(response[0].show);
 
       $(".tv-input").val("");
       $("#show-img").html("<img src='" + response[0].show.image.medium + "' alt='Show Poster'>");
       $("#show-title").text(response[0].show.name);
+
+      // if the show has an external site display link
+      if(response[0].show.officialSite !== null) {
+        var siteLink = $("#site-link");
+        siteLink.html("<a target='_blank' href='" + response[0].show.officialSite + "'><div class='icon " + response[0].show.network.name + "'></div></a>");
+        siteLink.append("<a target='_blank' href='https://www.imdb.com/title/" + response[0].show.externals.imdb + "'><div class='icon imdb' alt='IMDB Link'></div></a>");
+      // else display imdb link
+      } else {
+        $("#site-link").html("<a target='_blank' href='https://www.imdb.com/title/" + response[0].show.externals.imdb + "'><div class='icon imdb'></div></a>");
+      }
+
       $("#show-description").html("<p>" + response[0].show.summary + "</p>");
       $("#network").html("<p><strong>Network: </strong>" + response[0].show.network.name + "</p>");
       $("#genre").html("<p><strong>Genre: </strong>" + response[0].show.genres + "</p>");
@@ -81,13 +93,7 @@ function searchBar() {
       $("#premiere").html("<p><strong>Premiere Date: </strong>" + response[0].show.premiered + "</p>");
       $("#results").html("<p>" + response[0].show.status + "</p>");
   
-      // if the show has an external site display link
-      if(response[0].show.officialSite !== null) {
-        $("#site-link").html("<a target='_blank' href='" + response[0].show.officialSite + "'>" + response[0].show.officialSite + "</a>");
-      // else display nothing
-      } else {
-        $("#site-link").empty();
-      }
+
 
       // If show is on air display "Add to watchlist" button
       if (response[0].show.status == "Running") {
@@ -108,15 +114,15 @@ function searchBar() {
           url: seasonsQuery,
           method: "GET"
         }).done(function(seasons) {
-          console.log(seasons);
-          $("#season-btns").empty();
+          console.log("Seasons: ");
+          console.log(seasons)
+          ;          $("#season-btns").empty();
           $("#season-btns").css("display", "block");
           $("#episode-container").empty();
           $("#episode-container").css("display", "block");
 
           for (var i = 0; i < seasons.length; i++) {
             var seasonID = seasons[i].id;
-            console.log(seasonID);
             $("#season-btns").append("<a class='btn season-link' id='" + i + "' data-id='" + seasonID + "'>Season: " + seasons[i].number + "</a>");
 
             var seasonBtn = $("#" + i);
@@ -136,7 +142,6 @@ function searchBar() {
                   url: episodesQuery,
                   method: "GET"
                 }).done(function(episodes) {
-                  console.log(episodes);
                   $("#episode-container").empty();
 
                     for (var i = 0; i < episodes.length; i++) {
@@ -188,6 +193,7 @@ function getAllShows() {
       return 0;
     });
 
+    console.log("Shows-list: ");
     console.log(shows);
   
     for (var i = 0; i < shows.length; i++) {

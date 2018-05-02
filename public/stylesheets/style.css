@@ -52,93 +52,8 @@ nav .dropdown {
   margin-right:20px;
 }
 
-/* ========================== */
-/* ====== SHOW RESULTS ====== */
-/* ========================== */
-.show-info-container {
- display:none;
-}
 
-#show-img img {
-  height:400px;
-  width:auto;
-}
 
-.show-title{
- background-color:#353A3F;
- color:#F4D03F;
- padding:15px auto 15px auto;
-}
-
-.watchlist-btn {
-  position:absolute;
-  right:10px;
-  margin:10px auto;
-}
-
-.add-to-watchlist-btn:hover {
-  color:#353A3F !important;
-  background:#F4D03F;
-}
-
-#show-title {
-  font-size:200%;
-  font-weight:bold;
-}
-
-#season-btns {
-  margin: 20px auto;
-  background-color:#353A3F;
-  padding:10px 15px;
-  text-align:center;
-  display:none;
-}
-
-.season-link {
-  padding:5px 15px;
-  margin: 0 auto;
-  color:#fff !important;
-  border-radius:0px;
-  border-left:2px solid #353A3F;
-  border-right: 2px solid #353A3F;
-  transition: color 0.3s, border-left 0.3s, border-right 0.3s;
-
-}
-
-.season-link:hover {
-  color:#F4D03F !important;
-  border-left:2px solid #F4D03F;
-  border-right: 2px solid #F4D03F;
-}
-
-.season-link-active {
-  color:#F4D03F !important;
-  border-left:2px solid #F4D03F;
-  border-right: 2px solid #F4D03F;
-}
-
-/* ========================== */
-/* == EPISODES LIST RESULTS == */
-/* ========================== */
-
-#episode-container {
-  margin-top:20px;
-  display:none;
-}
-
-#episode-container h3 {
-  font-size:130%;
-  font-weight:bold;
-}
-
-#episode-container p {
-  font-size:90%;
-  margin-bottom:10px;
-}
-
-.choose-text {
-  text-align:center;
-}
 
 /* ========================== */
 /* ========= FOOTER ========= */
@@ -265,7 +180,130 @@ footer p {
 /* ======= SHOWS PAGE ======= */
 /* ========================== */
 
+
+/* ======= SHOW INFO ======== */
+/* ========================== */
+.show-info-container {
+  display:none;
+ }
+ 
+ #show-img img {
+   height:400px;
+   width:auto;
+   margin-top:20px;
+ }
+ 
+ .show-title{
+  background-color:#353A3F;
+  color:#F4D03F;
+  padding:15px auto 15px auto;
+ }
+ 
+ .watchlist-btn {
+   position:absolute;
+   right:30px;
+   float:right;
+   margin:10px auto;
+ }
+ 
+ .add-to-watchlist-btn:hover {
+   color:#353A3F !important;
+   background:#F4D03F;
+ }
+ 
+ #show-title {
+   font-size:200%;
+   font-weight:bold;
+ }
+ 
+ #season-btns {
+   margin: 20px auto;
+   background-color:#353A3F;
+   padding:10px 15px;
+   text-align:center;
+   display:none;
+ }
+ 
+ .season-link {
+   padding:5px 15px;
+   margin: 0 auto;
+   color:#fff !important;
+   border-radius:0px;
+   border-left:2px solid #353A3F;
+   border-right: 2px solid #353A3F;
+   transition: color 0.3s, border-left 0.3s, border-right 0.3s;
+ 
+ }
+ 
+ .season-link:hover {
+   color:#F4D03F !important;
+   border-left:2px solid #F4D03F;
+   border-right: 2px solid #F4D03F;
+ }
+ 
+ .season-link-active {
+   color:#F4D03F !important;
+   border-left:2px solid #F4D03F;
+   border-right: 2px solid #F4D03F;
+ }
+
 #shows-list h3 {
   text-decoration: none;
   font-size:150%;
+}
+
+#site-link {
+  float:right;
+}
+
+.icon {
+  background-image:url("../images/Network_Icon_Sprite.jpg");
+  background-repeat:no-repeat;
+  height:50px;
+  width:50px;
+  display:inline-block;
+  margin: 10px 0 0 10px;
+}
+
+.imdb {
+  background-position: 0px 0px;
+}
+
+.ABC {
+  background-position: -50px 0px;
+}
+
+.CBS {
+  background-position: -100px 0px;
+}
+
+.CW {
+  background-position: -150px 0px;
+}
+
+#show-description {
+  clear:both;
+}
+
+/* ========================== */
+/* == EPISODES LIST RESULTS == */
+/* ========================== */
+
+#episode-container {
+  margin-top:20px;
+  display:none;
+}
+
+#episode-container h3 {
+  font-size:130%;
+  font-weight:bold;
+}
+
+#episode-container p {
+  font-size:90%;
+  margin-bottom:10px;
+}
+
+.choose-text {
+  text-align:center;
 }
