@@ -52,54 +52,63 @@
     </div>
   </nav>
 
-<!-- <div class="wrapper"> -->
   <div class="container">
 
-    <a href="/shows" class="view-shows-btn">View all Shows</a>
-    
-    <form class="form-inline my-2 my-lg-0 search-bar">
-        <input class="form-control mr-sm-2 tv-input" type="search" placeholder="Search Shows" aria-label="Search">
-        <button class="btn btn-outline-info my-2 my-sm-0 searchTV" type="submit">Search</button>
-    </form>
+    <div class="row search">
+      <div class="col-lg-6">
+          <a href="/shows" class="view-shows-btn">View all Shows</a>
+      </div>
+      <div class="col-lg-6">
+          <form class="form-inline my-2 my-lg-0 search-bar">
+              <input class="form-control mr-sm-2 tv-input" type="search" placeholder="Search Shows" aria-label="Search">
+              <button class="btn btn-outline-info my-2 my-sm-0 searchTV" type="submit">Search</button>
+          </form>
+      </div>
+    </div>
 
-  
     <div id="shows-list"></div>
 
     <div class="show-info-container shows">
         <div class="row show-title">
-            <h2 id="show-title"></h2>
-            <div class="watchlist-btn"></div>
+          <div class="col-lg-6">
+              <h2 id="show-title"></h2>
+          </div>   
+          <div class="col-lg-6">
+              <div class="watchlist-btn"></div>
+          </div>        
         </div>    
         <div class="row">
           <div class="col-lg-3">
             <div id="show-img"></div>
           </div>
-          <div class="col-lg-9">
-              <div id="site-link"></div>
+          <div class="col-lg-8">
+              <!-- <div id="site-link"></div> -->
               <p id="show-description"></p>
               <p id="network"></p>
               <p id="genre"></p>
               <p id="premiere"></p>
           </div>
+          <div class="col-lg-1">
+              <div id="site-link"></div>
+          </div>
         </div>                        
   
-    <!-- Row for the seasons buttons -->
-    <div class="row">
-      <div class="col-lg-12">
-        <div id="season-btns"></div>
-      </div>
-    </div>
-
-    <!-- Row container the list of episodes per season -->
-    <div class="row">
-        <div class="col-lg-12">
-          <div id="episode-container">
-            <p class="choose-text">Choose a season to view episodes</p>
+        <!-- Row for the seasons buttons -->
+        <div class="row">
+          <div class="col-lg-12">
+            <div id="season-btns"></div>
           </div>
         </div>
-      </div>
-    </div>
 
+        <!-- Row container the list of episodes per season -->
+        <div class="row">
+            <div class="col-lg-12">
+              <div id="episode-container">
+                <p class="choose-text">Choose a season to view episodes</p>
+              </div>
+            </div>
+          </div>
+        </div>
   </div> <!-- End show info container -->
 
 </div>

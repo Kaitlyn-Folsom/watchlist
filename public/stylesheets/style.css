@@ -24,14 +24,9 @@ body{
   min-width:100%;
   min-height:100%;
   /* margin-bottom:-50px; */
-  padding-left:20px;
+  margin: 0 50px;
 }
 
-/* .wrapper {
-  height: auto !important;
-  height: 100%;
-  min-height: 100%;
-} */
 
 h1, h2, h3, h4, h5, h6 {
   margin:10px 0;
@@ -39,10 +34,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: 'Comfortaa', cursive;
 }
 
-.row{
-	margin:0 auto;
-  width:100%;
-}
+
 
 /* ========================== */
 /* ========= NAVBAR ========= */
@@ -179,6 +171,19 @@ footer p {
 /* ========================== */
 /* ======= SHOWS PAGE ======= */
 /* ========================== */
+.search {
+ margin: 30px 0;
+}
+
+.view-shows-btn {
+  color:#000;
+}
+
+.view-shows-btn:hover {
+  text-decoration:none;
+  color:#353A3F;
+}
+
 .flex-wrap a {
   text-align:center;
   /* border:1px solid #000; */
@@ -196,7 +201,7 @@ margin:0px auto;
  }
  
  #show-img img {
-   height:400px;
+   height:420px;
    width:auto;
    margin-top:20px;
  }
@@ -204,12 +209,9 @@ margin:0px auto;
  .show-title{
   background-color:#353A3F;
   color:#F4D03F;
-  padding:15px auto 15px auto;
  }
  
  .watchlist-btn {
-   position:absolute;
-   right:30px;
    float:right;
    margin:10px auto;
  }
@@ -222,6 +224,7 @@ margin:0px auto;
  #show-title {
    font-size:200%;
    font-weight:bold;
+   padding-left:10px;
  }
  
  #season-btns {
