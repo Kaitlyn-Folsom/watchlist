@@ -8,7 +8,10 @@ $(document).ready(function() {
     } else if (URL.pathname == "/shows") {
       getUserData();
       getAllShows();
-      searchBar();
+      $(".searchTV").on("click", function() {
+        var show = $(".tv-input").val().trim();
+        searchBar(show);
+      });
     
     } else if (URL.pathname == "/schedule") {
       getUserData();
@@ -53,15 +56,15 @@ function getDay() {
   $("#time").html("<p>Today is " + day + "</p>");
 };
 
-function searchBar() {
-  $(".searchTV").on("click", function(event) {
+function searchBar(show) {
   event.preventDefault();
+    
 
     // This line grabs the input from the textbox
-    var show = $(".tv-input").val().trim();
+    // var show = $(".tv-input").val().trim();
 
     $(".show-info-container").css("display", "block");
-
+    $("#shows-list").empty();
     // API get show info query
     var showInfoQuery = "http://api.tvmaze.com/search/shows?q=" + show + "&embed=episodes";
 
@@ -69,11 +72,15 @@ function searchBar() {
       url: showInfoQuery,
       method: "GET"
     }).done(function(response) {
-      console.log("You searched for :");
-      console.log(response[0].show);
-
+      // console.log("You searched for :");
+      // console.log(response[0].show);
+console.log(response[0].show);
       $(".tv-input").val("");
-      $("#show-img").html("<img src='" + response[0].show.image.medium + "' alt='Show Poster'>");
+      if (response[0].show.image == null) {
+        $("#show-img").text("No image available");
+      } else {
+        $("#show-img").html("<img src='" + response[0].show.image.medium + "' alt='Show Poster'>");
+      }
       $("#show-title").text(response[0].show.name);
 
       // if the show has an external site display link
@@ -115,8 +122,8 @@ function searchBar() {
           method: "GET"
         }).done(function(seasons) {
           console.log("Seasons: ");
-          console.log(seasons)
-          ;          $("#season-btns").empty();
+          console.log(seasons);          
+          $("#season-btns").empty();
           $("#season-btns").css("display", "block");
           $("#episode-container").empty();
           $("#episode-container").css("display", "block");
@@ -128,6 +135,7 @@ function searchBar() {
             var seasonBtn = $("#" + i);
 
             seasonBtn.click(function() {
+              console.log("season button clicked");
               if ($(".season-link").hasClass("season-link-active")) {
                 $(".season-link").removeClass("season-link-active");
               }
@@ -175,7 +183,6 @@ function searchBar() {
       } // End getSeasons function
 
     }); // End getShow Ajax call
-  });
 } // End searchBar function
 
 function getAllShows() {
@@ -193,30 +200,31 @@ function getAllShows() {
       return 0;
     });
 
-    console.log("Shows-list: ");
     console.log(shows);
   
     for (var i = 0; i < shows.length; i++) {
      
-      var showID = shows[i].id;
+      var showID = shows[i].name;
 
       var showGrid = $("#shows-list");
-      showGrid.append("<a href='#'><h3 id='" + i + "' data-id='" + showID + "'>" + shows[i].name +"</h3><img src='" + shows[i].image.medium + "' alt='Show Poster'></a>");
-  
-      var showLink = $("#" + i);
+      showGrid.append("<div>");
+      showGrid.addClass("d-flex flex-wrap align-content-justify");
+      showGrid.append("<a href='#' id='" + i + "' data-id='" + showID + "'><img src='" + shows[i].image.medium + "' alt='Show Poster'><p>" + shows[i].name + "</p></a>");
         
-      $(showLink).click(function() {
-        var episodeLinkID = $(this).attr("data-id");
-        console.log("ID clicked: " + showID);
-        // console.log(showID);
-        var showInfo = "http://api.tvmaze.com/shows/" + episodeLinkID;
-        $.ajax({
-          url: showInfo,
-          method: "GET"
-        }).done(function(showInfo) {
-          console.log(showInfo);
-        });
+      $("#" + i).click(function() {
+        console.log("show clicked: " + $(this).attr("data-id"));
+var showName = $(this).attr("data-id");
+          searchBar(showName);
+          // var showInfo = "http://api.tvmaze.com/shows/" + $(this).attr("data-id");
+          // $.ajax({
+          //   url: showInfo,
+          //   method: "GET"
+          // }).done(function(showInfo) {
+          //   console.log(showInfo);
+          //   searchBar();
+          // });      
       });
     };
   });
-}
+
+} // End get all shows function

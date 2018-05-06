@@ -23,15 +23,15 @@ body{
 	overflow: hidden;
   min-width:100%;
   min-height:100%;
-  margin-bottom:-50px;
+  /* margin-bottom:-50px; */
   padding-left:20px;
 }
 
-.wrapper {
+/* .wrapper {
   height: auto !important;
   height: 100%;
   min-height: 100%;
-}
+} */
 
 h1, h2, h3, h4, h5, h6 {
   margin:10px 0;
@@ -179,10 +179,18 @@ footer p {
 /* ========================== */
 /* ======= SHOWS PAGE ======= */
 /* ========================== */
+.flex-wrap a {
+  text-align:center;
+  /* border:1px solid #000; */
+  padding: 20px 20px;
+}
+
+#shows-list {
+margin:0px auto;
+}
 
 
 /* ======= SHOW INFO ======== */
-/* ========================== */
 .show-info-container {
   display:none;
  }
@@ -249,7 +257,7 @@ footer p {
 
 #shows-list h3 {
   text-decoration: none;
-  font-size:150%;
+  font-size:130%;
 }
 
 #site-link {

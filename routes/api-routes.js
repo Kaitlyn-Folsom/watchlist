@@ -1,6 +1,7 @@
 // Requiring our models and passport as we've configured it
 var db = require("../models");
 var passport = require("../config/passport");
+var request = require("request");
 
 module.exports = function(app) {
   // Using the passport.authenticate middleware with our local strategy.
@@ -55,9 +56,27 @@ module.exports = function(app) {
   });
 
     // Get route for returning posts of a specific category
-    app.get("/show/:id", function(req, res) {
+    app.get("/shows/:id", function(req, res) {
       var showID = req.params.id;
-    
+
+      request("http://api.tvmaze.com/shows/" + showID, function(error, response, body) {
+
+      // If the request is successful (i.e. if the response status code is 200)
+      if (!error && response.statusCode === 200) {
+        console.log(JSON.parse(body));
+        // Parse the body of the site and recover just the imdbRating
+        // (Note: The syntax below for parsing isn't obvious. Just spend a few moments dissecting it).
+        console.log("You clicked:  " + body);
+      }
+      });
+
+      // var showInfo = "http://api.tvmaze.com/shows/" + showID;
+      // $.ajax({
+      //   url: showInfo,
+      //   method: "GET"
+      // }).done(function(showInfo) {
+      //   res.json({});
+      // });
     });
 
 };
